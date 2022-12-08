@@ -16,7 +16,7 @@ export default function Register() {
     useRegisterMutation();
 
   const navigate = useNavigate();
-  
+
   useEffect(() => {
     if (responseError?.data) {
       setError(responseError.data);
@@ -24,7 +24,8 @@ export default function Register() {
     if (data?.accessToken && data?.user) {
       navigate("/inbox");
     }
-  }, [data, responseError,navigate]);
+  }, [data, responseError, navigate]);
+  
   const handleSubmit = (e) => {
     e.preventDefault();
 
